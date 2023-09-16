@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>MX-89 Titanium</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=News+Cycle"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Cabin:600"
+      rel="stylesheet"
+    />
+    <link
+      href="./font/font-awesome-4.7.0/css/font-awesome.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/calc.css" />
+    <style>
+      .lil{
+        font-size:14px !important;
+        position:absolute;
+        top:-60%;
+        width:100px;
+        margin:auto;
+        left:0;
+        right:0;
+        font-weight:bold;
+      }
+      .lil_1{
+        font-size:14px !important;
+        position:absolute;
+        top:-112%;
+        width:100px;
+        margin:auto;
+        left:0;
+        right:0;
+        font-weight:bold;
+      }
+      .lil_0{
+        font-size:16px !important;
+        position:absolute;
+        top:-40%;
+        width:100px;
+        margin:auto;
+        left:0;
+        right:0;
+        font-weight:bold;
+      }
+      .lil_4{
+        font-size:12px !important;
+        position:absolute;
+        top:-65%;
+        width:100px;
+        margin:auto;
+        left:0;
+        right:0;
+        font-weight:bold;
+      }
+      .lil_1 .l2{
+        font-size:9px !important;
+      }
+      .lil_1 .l1{
+        font-size:9px !important;
+      }
+      .lil_1 .l3{
+        font-size:9px !important;
+      }
+      .l1{
+        color:#88bad9 !important;
+      }
+      .l2{
+        color:#aecab2 !important;
+      }
+      .col div{
+        position:relative;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="calc-outer" class="hidden">
+      <div id="inner-wrap">
+        <div id="calc-inner">
+          <div id="calc-inner-gradient"></div>
+        </div>
+        <div id="calc-screen">
+          <div id="calc-screen-tabs">
+            <div>F1<br />Tools</div>
+            <div>F2<br />Zoom</div>
+            <div>F3<br />Trace</div>
+            <div>F4<br />Regraph</div>
+            <div>F5<br />Math</div>
+            <div>F6<br />Draw</div>
+            <div>F7<br />Pen</div>
+            <div>F8<br />IC</div>
+          </div>
+          <div id="calc-screen-history">
+            <ul class="s_entries">
+              
+            </ul>
+          </div>
+          <div id="calc-screen-entry-div" style="position: relative">
+            <input
+              id="calc-screen-text-entry"
+              class="hidden"
+              value=""
+              readonly="readonly"
+              type="text"
+            />
+          </div>
+          <div id="calc-screen-status"></div>
+          <div id="calc-screen-shadow-top"></div>
+        </div>
+        <div id="calc-screen-spacer"></div>
+        <div id="fbutton-group">
+
+          <div class="btn">
+           <span class="lil">
+            <span class="l1">F6</span>&nbsp<span class="l2"> Y=</span>
+           </span> 
+              <span>F1</span>
+          </div>
+          <div class="btn">
+            <span class="lil" style="left:-20px">
+              <span class="l1">F7</span>&nbsp<span class="l2"> WINDOW</span>
+             </span> 
+            <span>F2</span></div>
+          <div class="btn">
+            <span class="lil" style="left:-10px">
+              <span class="l1">F8</span>&nbsp<span class="l2"> GRAPH</span>
+             </span> 
+            <span>F3</span></div>
+          <div class="btn">
+            <span class="lil">
+              <span class="l1"></span>&nbsp<span class="l2">TBLSET</span>
+             </span> 
+            <span>F4</span>
+          </div>
+          <div class="btn">
+            <span class="lil">
+              <span class="l1"></span>&nbsp<span class="l2"> TABLE</span>
+             </span> 
+            <span>F5</span></div>
+        </div>
+        <div id="arrow-group">
+          <div id="arrow-left" class="btn">
+            <span><i class="fa fa-chevron-left"></i></span>
+          </div>
+          <div id="arrow-updown">
+            <div id="arrow-up" class="btn">
+              <span><i class="fa fa-chevron-up"></i></span>
+            </div>
+            <div id="arrow-down" class="btn">
+              <span><i class="fa fa-chevron-down"></i></span>
+            </div>
+          </div>
+          <div id="arrow-right" class="btn">
+            <span><i class="fa fa-chevron-right"></i></span>
+          </div>
+        </div>
+        <div id="columns">
+          <div id="col-1" class="col">
+            <div id="col-1-second"  class="btn">
+              <span>2ND</span>
+              <span class="lil_1">
+              <span class="l2" style="margin-left:10px">CUT</span>
+               </span> 
+            </div>
+            <div id="col-1-diamond" class="btn">
+              <i class="fa fa-stop"></i>
+             
+            </div>
+            <div id="col-1-home" class="btn">
+              <span>HOME</span>
+              <span class="lil_1">
+                <span class="l1" style="margin-left:10px">CUSTOM</span>
+                 </span> 
+            </div>
+            <div id="col-1-x" class="btn">
+              <span>X</span>
+              <span class="lil_1">
+                <span class="l1" style="margin-left:10px">LN</span>&nbsp<span class="l2">e<sup>x</sup></span>
+                 </span>
+            </div>
+            <div id="col-1-equal" class="btn">
+              <span>=</span>
+              <span class="lil_1">
+                <span class="l1" style="margin-left:10px"> ‘</span>&nbsp<span class="l3">A</span>
+                 </span>
+            </div>
+            <div id="col-1-pipe" class="btn">
+              <span>|</span>
+              <span class="lil_1">
+                <span class="l1" style="margin-left:10px">°</span>&nbsp<span class="l3">F</span>
+                 </span>
+            </div>
+            <div id="col-1-ee" class="btn">
+              <span>EE</span>
+              <span class="lil_1">
+                <span class="l1" style="margin-left:0px"> ∠</span>&nbsp<span class="l2">KEY</span>&nbsp<span class="l3">K</span>
+                 </span>
+            </div>
+            <div id="col-1-store" class="btn">
+              <span>STO <i class="fa fa-caret-right"></i></span>
+              <span class="lil_1">
+                <span class="l1" style="margin-left:10px"> RCL</span>&nbsp<span class="l3">P</span>
+                 </span>
+            </div>
+            <div id="col-1-on" class="btn">
+              <span class="lil_0">
+                <span class="l1" style="margin-left:15px">OFF</span>
+                 </span>
+              <span>ON</span>
+            </div>
+          </div>
+          <div id="col-2" class="col">
+            <div id="col-2-shift" class="btn">
+              <div class="btn-padding">
+                <i class="fa fa-arrow-up"></i>
+                <span class="lil_1">
+                  <span class="l2" style="margin-left:10px">COPY</span>
+                  </span> 
+              </div>
+            </div>
+            <div id="col-2-alpha" class="btn">
+                <span class="lil_1">
+                <span class="l1" style="margin-left:10px">A-LOCK</span>
+                 </span>
+              <span>ALPHA</span>
+            </div>
+            <div id="col-2-mode" class="btn">
+              <span>MODE</span>
+              <span class="lil_1">
+                <span class="l1" style="margin-left:10px"><i class="fa fa-play"></i></span>&nbsp<span class="l2">_</span>
+                 </span>
+            </div>
+            <div id="col-2-y" class="btn">
+              <span>Y</span>
+              <span class="lil_1">
+                <span class="l1" style="margin-left:10px">SIN</span>&nbsp<span class="l2">SIN<sup>-1</sup></span>
+                 </span>
+            </div>
+            <div id="col-2-leftpar" class="btn">
+              <span>(</span>
+              <span class="lil_1">
+                <span class="l1" style="margin-left:10px">{</span>&nbsp<span class="l3">B</span>
+                 </span>
+            </div>
+            <div id="col-2-7" class="btn btn-blk">
+              <span>7</span>
+              <span class="lil_4">
+                <span class="l1" style="margin-left:10px">∫</span>&nbsp<span class="l3">G</span>
+                 </span>
+            </div>
+            <div id="col-2-4" class="btn btn-blk">
+              <span>4</span>
+              <span class="lil_4">
+                <span class="l1" style="margin-left:10px">:</span>&nbsp<span class="l3">L</span>
+                 </span>
+            </div>
+            <div id="col-2-1" class="btn btn-blk">
+              <span class="lil_4">
+                <span class="l1" style="margin-left:10px">''</span>&nbsp<span class="l3">Q</span>
+                 </span>
+              <span>1</span>
+            </div>
+            <div id="col-2-0" class="btn btn-blk">
+              <span>0</span>
+              <span class="lil_4">
+                <span class="l1" style="margin-left:10px"><</span>&nbsp<span class="l3">V</span>
+                 </span>
+            </div>
+          </div>
+          <div id="col-3" class="col">
+            <div id="col-3-esc" class="btn">
+              <span>ESC</span>
+            </div>
+            <div id="col-3-apps" class="btn">
+              <span class="lil_1" style="top:-20px;margin-left:10px">
+                 <img width="22px" height="auto" src="Group 1.svg" alt="">
+                 </span>
+              <span>APPS</span>
+            </div>
+            <div id="col-3-cat" class="btn">
+              <span class="lil_1">
+                <span class="l1" style="margin-left:10px">i</span>&nbsp<span style="font-size:16px !important" class="l2">∞</span>
+                 </span>
+              <span>CATALOG</span>
+            </div>
+            <div id="col-3-z" class="btn">
+              <span>Z</span>
+              <span class="lil_1">
+                <span class="l1" style="margin-left:5px">COS</span>&nbsp<span class="l2">COS <sup>-1</sup></span>
+                 </span>
+            </div>
+            <div id="col-3-rightpar" class="btn">
+              <span>)</span>
+              <span class="lil_1">
+                <span class="l1" style="margin-left:10px">}</span>&nbsp<span class="l3">C</span>
+                 </span>
+            </div>
+            <div id="col-3-8" class="btn btn-blk">
+              <span>8</span>
+              <span class="lil_4">
+                <span class="l1" style="margin-left:10px"><i>d</i></span>&nbsp<span class="l3">H</span>
+                 </span>
+            </div>
+            <div id="col-3-5" class="btn btn-blk">
+              <span>5</span>
+              <span class="lil_4">
+                <span class="l1" style="margin-left:10px">MATH</span>&nbsp<span class="l3">M</span>
+                 </span>
+            </div>
+            <div id="col-3-2" class="btn btn-blk">
+              <span class="lil_4">
+                <span class="l1" style="margin-left:10px">\</span>&nbsp<span class="l3">R</span>
+                 </span>
+              <span>2</span>
+            </div>
+            <div id="col-3-period" class="btn btn-blk">
+              <span>.</span>
+              <span class="lil_4" style="font-size:8px !important">
+                <span class="l1" style="margin-left:10px">></span>&nbsp<span class="l3">W</span>
+                 </span>
+            </div>
+          </div>
+          <div id="col-4" class="col">
+            <div id="col-4-backspace" class="btn">
+              <i class="fa fa-long-arrow-left"></i>
+              <span class="lil_1">
+                <span class="l1" style="margin-left:10px">INS</span>&nbsp<span class="l2">DEL</span>
+                 </span>
+            </div>
+            <div id="col-4-t" class="btn">
+              <span>T</span>
+              <span class="lil_1">
+                <span class="l1" style="margin-left:10px">TAN</span>&nbsp<span class="l2">TAN<sup>-1</sup></span>
+                 </span>
+            </div>
+            <div id="col-4-comma" class="btn">
+              <span>,</span>
+              <span class="lil_1">
+                <span class="l1" style="margin-left:10px">[</span>&nbsp<span class="l3">D</span>
+                 </span>
+            </div>
+            <div id="col-4-9" class="btn btn-blk">
+              <span>9</span>
+              <span class="lil_4">
+                <span class="l1" style="margin-left:10px">;</span>&nbsp<span class="l3">I</span>
+                 </span>
+            </div>
+            <div id="col-4-6" class="btn btn-blk">
+              <span>6</span>
+              <span class="lil_4">
+                <span class="l1" style="margin-left:10px">MEM</span>&nbsp<span class="l3">N</span>
+                 </span>
+            </div>
+            <div id="col-4-3" class="btn btn-blk">
+              <span>3</span>
+              <span class="lil_4">
+                <span class="l1" style="margin-left:10px">UNITS</span>&nbsp<span class="l3">S</span>
+                 </span>
+            </div>
+            <div id="col-4-negative" class="btn btn-blk">
+              <span>(</span><span>-</span><span>)</span>
+              <span class="lil_4">
+                <span class="l1" style="margin-left:10px">ANS</span>&nbsp<span class="l3">S</span>
+                 </span>
+            </div>
+          </div>
+          <div id="col-5" class="col">
+            <div id="col-5-clear" class="btn">
+              <span>CLEAR</span>
+            </div>
+            <div id="col-5-caret" class="btn">
+              <i class="fa fa-chevron-up"></i>
+              <span class="lil_1">
+                <span class="l1" style="margin-left:10px">π</span>&nbsp<span class="l2">θ</span>
+                 </span>
+            </div>
+            <div id="col-5-div" class="btn">
+              <span>÷</span>
+              <span class="lil_1">
+                <span class="l1" style="margin-left:10px">]</span>&nbsp<span class="l2">E</span>
+                 </span>
+            </div>
+            <div id="col-5-mult" class="btn">
+              <span>×</span>
+              <span class="lil_1">
+                <span class="l1" style="margin-left:10px">√</span>&nbsp<span class="l2">J</span>
+                 </span>
+            </div>
+            <div id="col-5-minus" class="btn">
+              <span>−</span>
+              <span class="lil_1">
+                <span class="l1" style="margin-left:10px">VAR-LINK</span>&nbsp<span class="l2">0</span>
+                 </span>
+            </div>
+            <div id="col-5-plus" class="btn">
+              <span>+</span>
+              <span class="lil_1">
+                <span class="l1" style="margin-left:10px">CHAR</span>&nbsp<span class="l2">U</span>
+                 </span>
+            </div>
+            <div id="col-5-enter" class="btn">
+              <span>ENTER</span>
+              <span class="lil_0">
+                <span class="l1" style="margin-left:10px">ENTRY</span>&nbsp<span class="l2">=</span>
+                 </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- <script src="./js/jquery-3.1.0.min.js"></script> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <!-- <script src="./js/script.js"></script> -->
+    <script>
+      var initialHeight;
+var inputID = "#calc-screen-text-entry";
+var cursorPosition = 0;
+var expression = '';
+var mode = "D"
+$(function () {
+  // Get initial height for use in resizing
+  initialHeight = $("#calc-outer").height();
+
+  // Set height to fill window
+  $("#calc-outer").css("height", "100%");
+
+  // Resize and show calculator
+  resizeWidthAndFont();
+  $("#calc-outer").removeClass("hidden");
+  $(window).resize(function () {
+    resizeWidthAndFont();
+  });
+
+  // BUTTONS
+  // Numbers
+  buttonPress("0", "#col-2-0");
+  buttonPress("1", "#col-2-1");
+  buttonPress("2", "#col-3-2");
+  buttonPress("3", "#col-4-3");
+  buttonPress("4", "#col-2-4");
+  buttonPress("5", "#col-3-5");
+  buttonPress("6", "#col-4-6");
+  buttonPress("7", "#col-2-7");
+  buttonPress("8", "#col-3-8");
+  buttonPress("9", "#col-4-9");
+
+  // Symbols
+  buttonPress("=", "#col-1-equal");
+  buttonPress("(", "#col-2-leftpar");
+  buttonPress(")", "#col-3-rightpar");
+  buttonPress(",", "#col-4-comma");
+  buttonPress("/", "#col-5-div");
+  buttonPress("*", "#col-5-mult");
+  buttonPress("-", "#col-5-minus");
+  buttonPress("+", "#col-5-plus");
+  buttonPress(".", "#col-3-period");
+  buttonPress("^", "#col-5-carrot");
+
+  // Common variable letters
+  buttonPress("x", "#col-1-x");
+  buttonPress("y", "#col-2-y");
+  buttonPress("z", "#col-3-z");
+  buttonPress("t", "#col-4-t");
+
+  // Clear
+  $("#col-5-clear").click(function () {
+    clear();
+  });
+
+  // Backspace
+  $("#col-4-backspace").click(function () {
+    backspace();
+  });
+
+  // On document load create input overlay, set input to readonly, and focus
+  $(inputID).after('<div id="inputCover"></div>');
+  $(inputID).attr("readonly", "readonly");
+  entryFocus($(inputID).val().length);
+});
+
+function resizeWidthAndFont() {
+  var h = $("#calc-outer").height();
+  var newHeight = (h / initialHeight) * 100;
+  $("#calc-outer").css("width", h / 2);
+  $("body").css("font-size", newHeight + "%");
+}
+
+function entryFocus(cPos) {
+  // cPos is the desired cursor position
+  // if not specified, cursor position defaults to the end on focus
+  if (!cPos && cPos !== 0) {
+    $(inputID).focus();
+  } else {
+    // move cursor to desired position
+    $(inputID)[0].selectionStart = cPos;
+    $(inputID)[0].selectionEnd = cPos;
+    $(inputID).focus();
+    cover(cPos);
+  }
+}
+
+//Insert a new value into the screen area
+function insert(val) {
+  var entry = $(inputID).val();
+
+  if (cursorPosition == entry.length) {
+    // append value to end of string
+    entry += val;
+    expression += val;
+  } else {
+    // split string entry and insert new value
+    var start = entry.slice(0, cursorPosition);
+    var end = entry.slice(cursorPosition, entry.length);
+    entry = start + val + end;
+    expression = val;
+  }
+  // replace input value with new entry
+  $(inputID).val(entry);
+
+  // advance cursor position and focus input
+  entryFocus(++cursorPosition);
+}
+
+//Function to perform Backspace
+function backspace() {
+  var entry = $(inputID).val();
+  if (cursorPosition == 0) {
+    return;
+  } else {
+    // trim char from end of the starting substring
+    var start = entry.slice(0, cursorPosition - 1);
+    var end = entry.slice(cursorPosition, entry.length);
+    entry = start + end;
+  }
+  // replace input value with new entry
+  $(inputID).val(entry);
+
+  // decrement cursor position and focus input
+  entryFocus(--cursorPosition);
+}
+
+//Clear the Screen
+function clear() {
+  $(inputID).val("");
+  cursorPosition = 0;
+  entryFocus(cursorPosition);
+}
+
+//Insert the Key that is Pressed into the Screen
+function buttonPress(val, id) {
+  $(id).click(function () {
+    insert(val);
+  });
+}
+function cover(cPos) {
+  var entry = $(inputID).val();
+  var start = entry.slice(0, cPos);
+  var end = entry.slice(cPos, entry.length);
+  $("#inputCover").html("<span>" + start + "</span><span>" + end + "</span>");
+}
+$("#col-5-enter").click(function(){
+
+  $(".s_entries").append(`${
+    <li>Hello</li>
+  }`)
+})
+
+// function calculateResult(expression) {
+//   $.ajax({
+//     url: "server/calc.php",
+//     type: "post",
+//     async: false,
+//     data: {
+//       expression: expression,
+//       mode: mode,
+//     },
+//     success: (response) => {
+//       $(".s2").text(`=${response}`);
+//       <li class="s_entry">
+//                 <div class="v1">9+5</div>
+//                 <div class="v2">14</div>
+//               </li>
+//     },
+//     error: (e) => {
+//     },
+//   });
+// }
+
+    </script>
+  </body>
+</html>
